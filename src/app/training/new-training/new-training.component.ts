@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TrainingService } from '../training.service';
-import { Exercise } from 'src/app/models/exercise.model';
 import { NgForm } from '@angular/forms';
+
+import { TrainingService } from '../training.service';
+import { Exercise } from '../exercise.model';
 
 @Component({
   selector: 'app-new-training',

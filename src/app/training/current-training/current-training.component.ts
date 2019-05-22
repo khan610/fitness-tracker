@@ -4,7 +4,6 @@ import { MatDialog } from '@angular/material';
 import { StopTrainingComponent } from './stop-training.component';
 import { TrainingService } from '../training.service';
 
-
 @Component({
   selector: 'app-current-training',
   templateUrl: './current-training.component.html',
@@ -14,7 +13,7 @@ export class CurrentTrainingComponent implements OnInit {
   progress = 0;
   timer: number;
 
-  constructor(private dialog: MatDialog, private trainingService: TrainingService) { }
+  constructor(private dialog: MatDialog, private trainingService: TrainingService) {}
 
   ngOnInit() {
     this.startOrResumeTimer();
@@ -33,7 +32,7 @@ export class CurrentTrainingComponent implements OnInit {
 
   onStop() {
     clearInterval(this.timer);
-      const dialogRef = this.dialog.open(StopTrainingComponent, {
+    const dialogRef = this.dialog.open(StopTrainingComponent, {
       data: {
         progress: this.progress
       }
@@ -46,6 +45,5 @@ export class CurrentTrainingComponent implements OnInit {
         this.startOrResumeTimer();
       }
     });
-    
   }
 }

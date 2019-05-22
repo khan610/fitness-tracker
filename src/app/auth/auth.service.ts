@@ -1,9 +1,9 @@
-import { Subject } from 'rxjs/Subject';
-
-import { User } from './user.module';
-import { AuthData } from './auth-data.module';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
+
+import { User } from './user.model';
+import { AuthData } from './auth-data.model';
 
 @Injectable()
 export class AuthService {
@@ -12,7 +12,7 @@ export class AuthService {
 
   constructor(private router: Router) {}
 
-  registredUser(authData: AuthData) {
+  registerUser(authData: AuthData) {
     this.user = {
       email: authData.email,
       userId: Math.round(Math.random() * 10000).toString()
