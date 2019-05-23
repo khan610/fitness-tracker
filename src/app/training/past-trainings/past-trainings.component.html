@@ -1,3 +1,34 @@
-<p>
-  past-trainings works!
-</p>
+<mat-table [dataSource]="dataSource">
+  <ng-continer matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.date | date }} </mat-cell>
+  </ng-continer>
+
+  <ng-continer matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+  </ng-continer>
+
+  <ng-continer matColumnDef="calories">
+    <mat-header-cell *matHeaderCellDef>Calories</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.calories | number }} </mat-cell>
+  </ng-continer>
+
+  <ng-continer matColumnDef="duration">
+    <mat-header-cell *matHeaderCellDef>Duration</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.duration | number }} </mat-cell>
+  </ng-continer>
+
+  <ng-continer matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.date | date }} </mat-cell>
+  </ng-continer>  
+
+  <ng-continer matColumnDef="state">
+    <mat-header-cell *matHeaderCellDef>State</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.state }} </mat-cell>
+  </ng-continer>  
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
