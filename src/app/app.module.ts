@@ -56,3 +56,5 @@ import { TrainingService } from './training/training.service';
   entryComponents: [StopTrainingComponent]
 })
 export class AppModule { }
+
+// , 'fitness-tracker'
