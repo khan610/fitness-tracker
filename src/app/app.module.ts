@@ -6,6 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
@@ -49,7 +50,8 @@ import { TrainingService } from './training/training.service';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase, 'fitness-tracker'),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [AuthService, TrainingService],
   bootstrap: [AppComponent],
