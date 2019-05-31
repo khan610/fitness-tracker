@@ -18,7 +18,6 @@ export class AuthService {
     private router: Router, 
     private afAuth: AngularFireAuth,
     private trainingService: TrainingService,
-    private snackbar: MatSnackBar,
     private uiService: UIService 
   ) {}
 
