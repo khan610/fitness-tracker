@@ -97,4 +97,5 @@ export class TrainingService {
   private addDataToDataBase(exercise: Exercise) {
     this.db.collection('finishedExercises').add(exercise);
   }
+
 }
