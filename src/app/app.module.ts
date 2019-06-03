@@ -15,10 +15,7 @@ import { AuthService } from './auth/auth.service';
 import { TrainingService } from './training/training.service';
 import { UIService } from './shared/ui.service';
 import { AuthModule } from './auth/auth.module';
-import { TrainingModule } from './training/training.module';
-
-
-
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -35,7 +32,8 @@ import { TrainingModule } from './training/training.module';
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase, 'fitness-tracker'),    
     AuthModule,
-    TrainingModule
+    AngularFirestoreModule
+    
   ],
   providers: [AuthService, TrainingService, UIService],
   bootstrap: [AppComponent]
