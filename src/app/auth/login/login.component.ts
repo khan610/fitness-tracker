@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs/internal/Subscription';
 import 'rxjs/add/operator/map';
 
 
@@ -18,7 +17,7 @@ import { Observable } from 'rxjs/internal/Observable';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   isLoading$: Observable<boolean>;
-  private loadingSubs: Subscription;
+  
 
   constructor(
     private authService: AuthService,
