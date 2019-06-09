@@ -10,7 +10,7 @@ export interface State {
 
 export const reducers: ActionReducerMap<State> = {
   ui: fromUi.uiReducer,
-  auth: fromAuth.AuthReducer
+  auth: fromAuth.authReducer
 };
 
 export const getUiState = createFeatureSelector<fromUi.State>('ui');

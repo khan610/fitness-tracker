@@ -77,10 +77,5 @@ export class AuthService {
 
   logout() {
     this.afAuth.auth.signOut();
-    
-  }
-
-  isAuth() {
-    return this.isAuthenticated;
   }
 }
