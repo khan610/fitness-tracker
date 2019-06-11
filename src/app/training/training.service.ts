@@ -13,12 +13,7 @@ import * as Training from './training.actions';
 import * as fromTraining from './training.reducer';
 
 @Injectable()
-export class TrainingService {
-  exerciseChanged = new Subject<Exercise>();
-  exercisesChanged = new Subject<Exercise[]>();
-  finishedExercisesChanged = new Subject<Exercise[]>();
-  private availableExercises: Exercise[] = [];
-  private runningExercise: Exercise;
+export class TrainingService {  
   private fbSubs: Subscription[] = [];
 
   constructor(
@@ -48,8 +43,7 @@ export class TrainingService {
         this.store.dispatch(new Training.SetAvailableTrainings(exercises));
       }, error => {
         this.store.dispatch(new UI.StopLoading());
-        this.uiService.showSnackbar('Fetching Exercises failed, please try again later', null, 3000);
-        this.exercisesChanged.next(null);
+        this.uiService.showSnackbar('Fetching Exercises failed, please try again later', null, 3000);        
       }));
   }
   
@@ -77,7 +71,7 @@ export class TrainingService {
         duration: ex.duration * (progress / 100),
         calories: ex.calories * (progress / 100),
         date: new Date(),
-        state: 'completed'
+        state: 'cancelled'
       });
       this.store.dispatch(new Training.StopTraining());
     });
@@ -85,10 +79,7 @@ export class TrainingService {
     this.store.dispatch(new Training.StopTraining());
   }
 
-  getRunningExercise() {
-    return { ...this.runningExercise };
-  }
-
+  
   fetchCompletedOrCancelledExercises() {
     this.fbSubs.push(this.db
       .collection('finishedExercises')
